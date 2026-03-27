@@ -23,14 +23,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:wght@300;400;600&family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
         :root {
-            --red: #bf0a30;
-            --navy: #002868;
-            --dark-red: #8b0000;
-            --gold: #c9a84c;
-            --cream: #f5f0e8;
-            --dark: #111111;
-            --mid: #333;
-            --light-gray: #f0ede6;
+            --red: #ff5a1f;
+            --navy: #b73a12;
+            --dark-red: #d84315;
+            --gold: #ffd2a3;
+            --cream: #fff7f0;
+            --dark: #241008;
+            --mid: #5f3b2b;
+            --light-gray: #fff1e5;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -56,7 +56,7 @@
             position: fixed;
             top: 0; left: 0; right: 0;
             z-index: 1000;
-            background: rgba(0,0,0,0.95);
+            background: rgba(36,16,8,0.95);
             backdrop-filter: blur(8px);
             display: flex;
             align-items: center;
@@ -103,7 +103,7 @@
             letter-spacing: 2px !important;
         }
 
-        .nav-donate:hover { background: var(--red); color: white !important; box-shadow: 0 0 0 2px var(--gold) inset, 0 4px 12px rgba(191,10,48,0.4); }
+        .nav-donate:hover { background: var(--red); color: white !important; box-shadow: 0 0 0 2px var(--gold) inset, 0 4px 12px rgba(255,90,31,0.4); }
 
         /* hamburger */
         .hamburger {
@@ -125,7 +125,7 @@
             display: none;
             position: fixed;
             top: 60px; left: 0; right: 0;
-            background: rgba(0,0,0,0.97);
+            background: rgba(36,16,8,0.97);
             z-index: 999;
             flex-direction: column;
             border-bottom: 2px solid var(--red);
@@ -151,7 +151,7 @@
         /* ── HERO ── */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(160deg, #000 0%, #0d0d1a 40%, #1a000a 100%);
+            background: linear-gradient(160deg, #5b1d08 0%, #d9480f 48%, #ff7a2f 100%);
             display: grid;
             grid-template-columns: 1fr 1fr;
             align-items: center;
@@ -165,8 +165,8 @@
             position: absolute;
             inset: 0;
             background: 
-                radial-gradient(ellipse 60% 80% at 70% 50%, rgba(191,10,48,0.15) 0%, transparent 70%),
-                radial-gradient(ellipse 40% 60% at 30% 80%, rgba(0,40,104,0.2) 0%, transparent 60%);
+                radial-gradient(ellipse 60% 80% at 70% 50%, rgba(255,90,31,0.22) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 60% at 30% 80%, rgba(255,210,163,0.20) 0%, transparent 60%);
         }
 
         /* American flag stripe accent */
@@ -176,7 +176,7 @@
             top: 0; left: 0;
             width: 6px;
             height: 100%;
-            background: linear-gradient(to bottom, var(--red) 33%, white 33%, white 66%, var(--navy) 66%);
+            background: linear-gradient(to bottom, var(--red) 33%, #ffe4cb 33%, #ffe4cb 66%, var(--navy) 66%);
         }
 
         .hero-text {
@@ -299,7 +299,7 @@
         .hero-photo-placeholder {
             width: 100%;
             aspect-ratio: 3/4;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            background: linear-gradient(135deg, #7a250c 0%, #d9480f 50%, #ff8a3d 100%);
             border-radius: 4px;
             display: flex;
             flex-direction: column;
@@ -315,7 +315,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at center, rgba(191,10,48,0.1) 0%, transparent 70%);
+            background: radial-gradient(ellipse at center, rgba(255,90,31,0.14) 0%, transparent 70%);
         }
 
         /* photo placeholder CSS removed — real headshot embedded */
@@ -476,7 +476,7 @@
         .bio-photo-box {
             width: 100%;
             aspect-ratio: 16/9;
-            background: linear-gradient(135deg, #ddd 0%, #bbb 100%);
+            background: linear-gradient(135deg, #ffe8d5 0%, #ffc28d 100%);
             border-radius: 2px;
             display: flex;
             align-items: center;
@@ -684,7 +684,7 @@
 
         .acc-card:hover {
             border-color: var(--red);
-            background: rgba(191,10,48,0.05);
+            background: rgba(255,90,31,0.07);
         }
 
         .acc-card h3 {
