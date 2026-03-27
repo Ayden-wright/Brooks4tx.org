@@ -1344,6 +1344,114 @@
             .media-grid { grid-template-columns: 1fr; }
         }
 
+        .reform-panel {
+            max-width: 980px;
+            margin: 2rem auto 0;
+            padding: 3rem;
+            background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reform-panel::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(to right, var(--red), var(--gold), var(--navy));
+        }
+
+        .reform-kicker {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 3px;
+            font-size: 0.82rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .reform-lead {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.7rem, 3vw, 2.4rem);
+            line-height: 1.35;
+            color: white;
+            max-width: 760px;
+            margin-bottom: 1rem;
+        }
+
+        .reform-body {
+            color: rgba(255,255,255,0.78);
+            font-size: 1rem;
+            line-height: 1.85;
+            max-width: 760px;
+            font-weight: 300;
+        }
+
+        .reform-pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .reform-pillar {
+            padding: 1.25rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 2px;
+        }
+
+        .reform-pillar h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            color: white;
+            margin-bottom: 0.6rem;
+        }
+
+        .reform-pillar p {
+            color: rgba(255,255,255,0.68);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .reform-quote-inline {
+            margin-top: 0.5rem;
+            padding: 1.5rem 0 0 1.5rem;
+            border-left: 3px solid rgba(201,168,76,0.75);
+            max-width: 860px;
+        }
+
+        .reform-quote-inline blockquote {
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 900px) {
+            .reform-pillars { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .reform-panel { padding: 2rem 1.25rem; }
+            .reform-quote-inline { padding-left: 1rem; }
+        }
+
+        #delegate-faq .section-header {
+            max-width: 780px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        #delegate-faq .section-tag {
+            justify-content: center;
+        }
+
+        #delegate-faq .faq-wrap {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
         /* ── SKIP LINK (accessibility) ── */
         .skip-link {
             position: absolute;
@@ -1752,67 +1860,39 @@
     </div>
 </section>
 
-<!-- BY THE NUMBERS -->
+<!-- CASE FOR REFORM -->
 <section class="media-section" id="media" aria-labelledby="media-heading">
     <div class="section-header reveal">
-        <div class="section-tag tag-gold">By the Numbers</div>
+        <div class="section-tag tag-gold">Why This Matters</div>
         <h2 class="section-h2 light" id="media-heading">The Case for Reform</h2>
     </div>
 
-    <div class="infographic reveal" role="region" aria-label="Key statistics about Texas family courts" style="max-width:720px;">
-        <h3>Texas Family Court: Key Statistics</h3>
+    <div class="reform-panel reveal" role="region" aria-label="Why reform is needed">
+        <div class="reform-kicker">Truth. Family. Accountability.</div>
+        <p class="reform-lead">Texas families deserve party leadership that will confront broken systems directly, defend parental rights, and restore trust without hiding behind consultants, excuses, or empty slogans.</p>
+        <p class="reform-body">This campaign is built around a simple promise: tell the truth about what families are facing, stand up for children, and push for real accountability wherever public institutions have failed the people they were supposed to protect.</p>
 
-            <div class="infographic-bar">
-                <div class="bar-label">
-                    <span>Parents denied jury trial in custody cases <a href="https://statutes.capitol.texas.gov/Docs/FA/htm/FA.105.htm" target="_blank" rel="noopener noreferrer" title="Texas Family Code §105.002 — Source" aria-label="Source: Texas Family Code §105.002" style="color:var(--red);font-size:0.7rem;margin-left:4px;">[src]</a></span>
-                    <span aria-label="94 percent">94%</span>
-                </div>
-                <div class="bar-track" role="progressbar" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100" aria-label="94% of parents denied jury trial">
-                    <div class="bar-fill" data-width="94"></div>
-                </div>
+        <div class="reform-pillars">
+            <div class="reform-pillar">
+                <h3>Protect Children</h3>
+                <p>Put child safety ahead of bureaucracy, incentives, and political convenience.</p>
             </div>
-
-            <div class="infographic-bar">
-                <div class="bar-label">
-                    <span>TX Title IV-D federal funding received annually <a href="https://www.acf.hhs.gov/css/report/fy-2023-preliminary-data-report" target="_blank" rel="noopener noreferrer" title="HHS OCSE FY2023 Preliminary Data Report" aria-label="Source: HHS OCSE FY2023 Preliminary Data Report" style="color:var(--red);font-size:0.7rem;margin-left:4px;">[src]</a></span>
-                    <span aria-label="over 1.2 billion dollars">$1.2B+</span>
-                </div>
-                <div class="bar-track" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100" aria-label="$1.2B+ federal Title IV-D funding">
-                    <div class="bar-fill navy" data-width="78"></div>
-                </div>
+            <div class="reform-pillar">
+                <h3>Defend Families</h3>
+                <p>Fight for parental rights, due process, and a system families can trust again.</p>
             </div>
-
-            <div class="infographic-bar">
-                <div class="bar-label">
-                    <span>CPS cases closed without substantiated abuse <a href="https://www.dfps.texas.gov/About_DFPS/Annual_Report/" target="_blank" rel="noopener noreferrer" title="Texas DFPS Annual Report — Source" aria-label="Source: Texas DFPS Annual Report" style="color:var(--red);font-size:0.7rem;margin-left:4px;">[src]</a></span>
-                    <span aria-label="71 percent">71%</span>
-                </div>
-                <div class="bar-track" role="progressbar" aria-valuenow="71" aria-valuemin="0" aria-valuemax="100" aria-label="71% of CPS cases unsubstantiated">
-                    <div class="bar-fill gold" data-width="71"></div>
-                </div>
+            <div class="reform-pillar">
+                <h3>Demand Accountability</h3>
+                <p>Hold institutions, party leadership, and public actors to the same standard they demand from Texans.</p>
             </div>
-
-            <div class="infographic-bar">
-                <div class="bar-label">
-                    <span>Texas counties with contested family court filings <a href="https://www.txcourts.gov/statistics/" target="_blank" rel="noopener noreferrer" title="Texas Office of Court Administration — Source" aria-label="Source: Texas Office of Court Administration" style="color:var(--red);font-size:0.7rem;margin-left:4px;">[src]</a></span>
-                    <span aria-label="58 percent">58%</span>
-                </div>
-                <div class="bar-track" role="progressbar" aria-valuenow="58" aria-valuemin="0" aria-valuemax="100" aria-label="58% of counties with contested filings">
-                    <div class="bar-fill" data-width="58"></div>
-                </div>
-            </div>
-
-            <p class="infographic-source">Sources: Texas OAG, HHS OCSE FY2023 Preliminary Data Report, Texas DFPS Annual Report, Texas Office of Court Administration. Verify all figures against the most recent published reports before launch.</p>
         </div>
-</section>
 
-<!-- QUOTE -->
-<div class="quote-section">
-    <div class="quote-inner reveal">
-        <blockquote>"My work has always been about protecting children, strengthening families, and restoring trust in the systems that serve Texans — including our Party rules and reforms. I will not compromise on truth, accountability, or the people we are commanded to serve."</blockquote>
-        <div class="quote-attr">— Dr. Brooks McKenzie, RPT Chair Candidate</div>
+        <div class="reform-quote-inline">
+            <blockquote>"My work has always been about protecting children, strengthening families, and restoring trust in the systems that serve Texans — including our Party rules and reforms. I will not compromise on truth, accountability, or the people we are commanded to serve."</blockquote>
+            <div class="quote-attr">— Dr. Brooks McKenzie, RPT Chair Candidate</div>
+        </div>
     </div>
-</div>
+</section>
 
 <!-- CAMPAIGN MESSAGE -->
 <section class="section" id="campaign-message" role="region" aria-label="Campaign message">
@@ -1988,7 +2068,7 @@
         <h2 class="section-h2 light">Straight Answers for Texas GOP Delegates</h2>
     </div>
 
-    <div style="max-width:800px;" class="reveal">
+    <div class="reveal faq-wrap">
         <div style="border-bottom:1px solid rgba(255,255,255,0.1);padding:1.5rem 0;">
             <h3 style="font-family:'Playfair Display',serif;font-size:1.05rem;color:white;margin-bottom:0.6rem;">Who is Dr. Brooks McKenzie?</h3>
             <p style="color:rgba(255,255,255,0.65);font-size:0.9rem;line-height:1.7;font-weight:300;">Former Assistant Director of Research at the TCU Institute of Child Development — a principled conservative grounded in scripture, committed to servant leadership and protecting families over insider agendas. Note: He was not always a Christian, which shapes his testimony and resolve.</p>
