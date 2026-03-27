@@ -1080,127 +1080,18 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ── ENHANCEMENT 1: NAV SCROLL PROGRESS RIBBON ── */
-        :root { --progress-pct: 0%; }
-
-        nav::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0;
-            width: var(--progress-pct);
-            height: 2px;
-            background: linear-gradient(to right, var(--red), var(--gold));
-            transition: width 0.08s linear;
-            pointer-events: none;
-        }
-
-        /* Nav active-section indicator */
-        .nav-links a.nav-active {
-            color: var(--gold);
-            position: relative;
-        }
-        .nav-links a.nav-active::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 1rem; right: 1rem;
-            height: 2px;
-            background: var(--gold);
-        }
-
-        /* ── ENHANCEMENT 2: STAGGERED DIRECTIONAL REVEAL ── */
         .reveal {
             opacity: 0;
-            transform: translateY(28px);
-            transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-                        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-            will-change: opacity, transform;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
-        .reveal.from-left  { transform: translateX(-32px); }
-        .reveal.from-right { transform: translateX(32px); }
 
         .reveal.visible {
             opacity: 1;
-            transform: none;
+            transform: translateY(0);
         }
 
-        /* Platform card cascade */
-        .platform-grid .platform-card.reveal:nth-child(1) { transition-delay: 0ms; }
-        .platform-grid .platform-card.reveal:nth-child(2) { transition-delay: 90ms; }
-        .platform-grid .platform-card.reveal:nth-child(3) { transition-delay: 180ms; }
-        .platform-grid .platform-card.reveal:nth-child(4) { transition-delay: 270ms; }
-        .platform-grid .platform-card.reveal:nth-child(5) { transition-delay: 360ms; }
-        .platform-grid .platform-card.reveal:nth-child(6) { transition-delay: 450ms; }
-
-        /* Testimonial cascade */
-        .testimonials-grid .testimonial-card.reveal:nth-child(1) { transition-delay: 0ms; }
-        .testimonials-grid .testimonial-card.reveal:nth-child(2) { transition-delay: 100ms; }
-        .testimonials-grid .testimonial-card.reveal:nth-child(3) { transition-delay: 200ms; }
-
-        /* Accountability card cascade */
-        .accountability-grid .acc-card.reveal:nth-child(1) { transition-delay: 0ms; }
-        .accountability-grid .acc-card.reveal:nth-child(2) { transition-delay: 90ms; }
-        .accountability-grid .acc-card.reveal:nth-child(3) { transition-delay: 180ms; }
-
-        /* Endorsement card cascade */
-        .endorsements-grid .endorse-card.reveal:nth-child(1) { transition-delay: 0ms; }
-        .endorsements-grid .endorse-card.reveal:nth-child(2) { transition-delay: 100ms; }
-
-        /* Stat items cascade */
-        .about-strip .stat-item.reveal:nth-child(1) { transition-delay: 0ms; }
-        .about-strip .stat-item.reveal:nth-child(2) { transition-delay: 120ms; }
-        .about-strip .stat-item.reveal:nth-child(3) { transition-delay: 240ms; }
-
-        /* ── ENHANCEMENT 3: YOUTUBE FACADE ── */
-        .yt-facade {
-            cursor: pointer;
-            position: relative;
-        }
-        .yt-facade img.yt-thumb {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: inherit;
-        }
-        .yt-play-btn {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%) scale(1);
-            background: none;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
-                        filter 0.25s;
-            filter: drop-shadow(0 4px 20px rgba(0,0,0,0.55));
-            z-index: 2;
-            padding: 0;
-        }
-        .yt-facade:hover .yt-play-btn {
-            transform: translate(-50%, -50%) scale(1.13);
-            filter: drop-shadow(0 8px 28px rgba(255,90,31,0.55));
-        }
-        /* Loaded iframe inside facade */
-        .yt-facade iframe {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* ── ENHANCEMENT 4: MAGNETIC BUTTON BASE ── */
-        .btn-primary,
-        .btn-white,
-        .nav-donate {
-            transition: background 0.25s, color 0.25s, border-color 0.25s,
-                        box-shadow 0.25s, transform 0.25s;
-        }
-
-        /* ── ENHANCEMENT 5: STAT COUNTER STYLES ── */
-        .stat-num[data-target] {
-            font-variant-numeric: tabular-nums;
-        }
+        /* divider */
         .divider {
             display: flex;
             align-items: center;
@@ -2200,40 +2091,6 @@
                 flex-direction: column;
             }
         }
-
-        /* Extended stagger: record, tour, resolutions, reform pillars */
-        .record-grid .info-card.reveal:nth-child(1) { transition-delay: 0ms; }
-        .record-grid .info-card.reveal:nth-child(2) { transition-delay: 90ms; }
-        .record-grid .info-card.reveal:nth-child(3) { transition-delay: 180ms; }
-        .record-grid .info-card.reveal:nth-child(4) { transition-delay: 270ms; }
-
-        .tour-grid .tour-card.reveal:nth-child(1) { transition-delay: 0ms; }
-        .tour-grid .tour-card.reveal:nth-child(2) { transition-delay: 100ms; }
-        .tour-grid .tour-card.reveal:nth-child(3) { transition-delay: 200ms; }
-        .tour-grid .tour-card.reveal:nth-child(4) { transition-delay: 300ms; }
-
-        .resolutions-grid .resolution-card.reveal:nth-child(1) { transition-delay: 0ms; }
-        .resolutions-grid .resolution-card.reveal:nth-child(2) { transition-delay: 100ms; }
-        .resolutions-grid .resolution-card.reveal:nth-child(3) { transition-delay: 200ms; }
-        .resolutions-grid .resolution-card.reveal:nth-child(4) { transition-delay: 300ms; }
-
-        .reform-pillars .reform-pillar.reveal:nth-child(1) { transition-delay: 0ms; }
-        .reform-pillars .reform-pillar.reveal:nth-child(2) { transition-delay: 110ms; }
-        .reform-pillars .reform-pillar.reveal:nth-child(3) { transition-delay: 220ms; }
-
-        /* Hero scroll-driven parallax shift (progressive enhancement) */
-        @supports (animation-timeline: scroll()) {
-            @keyframes heroShift {
-                from { background-position: 0% 0%; }
-                to   { background-position: 0% 18%; }
-            }
-            .hero::before {
-                animation: heroShift linear both;
-                animation-timeline: scroll(root);
-                animation-range: 0px 600px;
-                background-size: 100% 120%;
-            }
-        }
 </style>
 <!-- Structured Data: Person + Organization schema for rich snippets -->
 <script type="application/ld+json">
@@ -2426,15 +2283,15 @@
 <!-- STATS STRIP -->
 <div class="about-strip">
 <div class="stat-item reveal">
-<span class="stat-num" data-target="20" data-suffix="+">20+</span>
+<span class="stat-num">20+</span>
 <div class="stat-label">Years Defending Texas Children &amp; Families</div>
 </div>
 <div class="stat-item reveal">
-<span class="stat-num" data-target="1000" data-suffix="s">1000s</span>
+<span class="stat-num">1000+</span>
 <div class="stat-label">DFPS/CPS Caseworkers &amp; Judges Trained</div>
 </div>
 <div class="stat-item reveal">
-<span class="stat-num" data-target="254" data-suffix="">254</span>
+<span class="stat-num">254</span>
 <div class="stat-label">Texas Counties Fighting With Us</div>
 </div>
 </div>
@@ -2446,19 +2303,14 @@
 </div>
 <div class="bio-grid">
 <!-- Video replaces photo -->
-<div class="bio-photo-wrap reveal from-left bio-video-panel">
+<div class="bio-photo-wrap reveal bio-video-panel">
 <div class="video-kicker" style="font-family:'Bebas Neue',sans-serif;letter-spacing:3px;font-size:0.75rem;color:var(--red);margin-bottom:0.6rem;">Watch — Who is Dr. McKenzie?</div>
-<div aria-label="Who is Dr. Brooks McKenzie — campaign video" class="bio-video-embed yt-facade" data-videoid="-nStCWHu_JM" role="region">
-<img alt="Watch: Who is Dr. Brooks McKenzie?" class="yt-thumb" height="720" loading="lazy" src="https://i.ytimg.com/vi/-nStCWHu_JM/maxresdefault.jpg" width="1280"/>
-<button aria-label="Play campaign video — Who is Dr. McKenzie?" class="yt-play-btn" type="button">
-<svg height="54" viewBox="0 0 68 48" width="76" xmlns="http://www.w3.org/2000/svg">
-<path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="var(--red)"/>
-<path d="M45 24 27 14v20" fill="white"/>
-</svg>
-</button>
+<div aria-label="Who is Dr. Brooks McKenzie — campaign video" class="bio-video-embed" role="region">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/-nStCWHu_JM?rel=0" title="YouTube video player">
+</iframe>
 </div>
 </div>
-<div class="bio-content reveal from-right">
+<div class="bio-content reveal">
 <p>Dr. Brooks McKenzie earned his Ph.D. in Experimental Psychology with an emphasis in Developmental Psychology from Texas Christian University in 2010. He served as Research Scientist and Assistant Director at the TCU Institute of Child Development, where he led TBRI (Trust-Based Relational Intervention) research and training that equips frontline interventionists with trauma-informed, practical care for at-risk children.</p>
 <p>His peer-reviewed scholarship documents the irreversible harm caused when courts and agencies violate parental rights. He helped advance SB293 and SJR27, and in 2025 he personally gathered and submitted hundreds of signatures to qualify conservative challengers to Texas Supreme Court Justices Blacklock and Busby for the 2026 primary — confronting judicial failures tied to the James Younger case.</p>
 <p>As Tarrant County GOP Precinct 2468 Chair, Dr. McKenzie has trained thousands of DFPS/CPS caseworkers, attorneys, and judges with evidence-based practices, exposed corruption in family courts, and authored emergency resolutions under Rule 44 to save James Younger and censure complicit justices. His campaign is anchored in a simple mandate: <em>Turn back to God, Restore the Family, Restore Texas.</em></p>
@@ -2560,15 +2412,15 @@
 <p class="reform-lead">Texas families deserve party leadership that will confront broken systems directly, defend parental rights, and restore trust without hiding behind consultants, excuses, or empty slogans.</p>
 <p class="reform-body">This campaign is built around a simple promise: tell the truth about what families are facing, stand up for children, and push for real accountability wherever public institutions have failed the people they were supposed to protect.</p>
 <div class="reform-pillars">
-<div class="reform-pillar reveal">
+<div class="reform-pillar">
 <h3>Protect Children</h3>
 <p>Put child safety ahead of bureaucracy, incentives, and political convenience.</p>
 </div>
-<div class="reform-pillar reveal">
+<div class="reform-pillar">
 <h3>Defend Families</h3>
 <p>Fight for parental rights, due process, and a system families can trust again.</p>
 </div>
-<div class="reform-pillar reveal">
+<div class="reform-pillar">
 <h3>Demand Accountability</h3>
 <p>Hold institutions, party leadership, and public actors to the same standard they demand from Texans.</p>
 </div>
@@ -2586,12 +2438,12 @@
 <h2 class="section-h2">Restore Judicial Accountability.<br/>Defend the Nuclear Family.</h2>
 </div>
 <div class="reveal two-col-layout campaign-layout" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
-<div class="reveal from-left">
+<div>
 <p style="font-size:1rem;line-height:1.8;color:var(--mid);font-weight:300;margin-bottom:1.5rem;">Dr. Brooks McKenzie is a lifelong conservative Texan running for RPT Chair to restore grassroots trust, uphold faith, and enforce the rule of law.</p>
 <p style="font-size:1rem;line-height:1.8;color:var(--mid);font-weight:300;margin-bottom:1.5rem;">He calls delegates to protect children, defend parental rights, and preserve the nuclear family as Texas's cornerstone — focusing upon integrity and accountability in every reform.</p>
 <p style="font-size:1rem;line-height:1.8;color:var(--mid);font-weight:300;">Restoring God's design ends the chaos of gender-mutilation, abortion accommodation, school abuse, and the multitude of state-sponsored child abuses. He will confront corruption, honor the Constitution, and serve God alone.</p>
 </div>
-<div class="content-panel scripture-panel reveal from-right" style="background:var(--light-gray);padding:2rem;border-radius:2px;border-left:4px solid var(--red);">
+<div class="content-panel scripture-panel" style="background:var(--light-gray);padding:2rem;border-radius:2px;border-left:4px solid var(--red);">
 <div style="font-family:'Bebas Neue',sans-serif;letter-spacing:3px;font-size:0.8rem;color:var(--red);margin-bottom:1rem;">Scripture for This Season</div>
 <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.95rem;line-height:1.8;color:var(--dark);margin-bottom:1rem;">"I came to send fire on the earth, and how I wish it were already kindled! But I have a baptism to be baptized with, and how distressed I am till it is accomplished! Do you suppose that I came to give peace on earth? I tell you, not at all, but rather division."</p>
 <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:0.95rem;line-height:1.8;color:var(--dark);margin-bottom:1rem;">"From now on five in one house will be divided: three against two, and two against three. Father will be divided against son and son against father, mother against daughter and daughter against mother, mother-in-law against her daughter-in-law and daughter-in-law against her mother-in-law."</p>
@@ -2628,22 +2480,22 @@
 <p class="section-intro" style="color:var(--mid);font-size:1rem;line-height:1.7;max-width:640px;font-weight:300;margin-top:0.8rem;">No spin, no excuses — accountable leadership that protects children, restores parental authority, and demands constitutional integrity across the Republican Party of Texas.</p>
 </div>
 <div class="reveal cards-grid cards-grid-2 record-grid cards-grid cards-grid-2 record-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem;">
-<div class="info-card reveal" style="background:white;padding:2rem;border-radius:2px;border-left:4px solid var(--red);box-shadow:0 2px 12px rgba(0,0,0,0.07);">
+<div class="info-card" style="background:white;padding:2rem;border-radius:2px;border-left:4px solid var(--red);box-shadow:0 2px 12px rgba(0,0,0,0.07);">
 <div style="font-family:'Bebas Neue',sans-serif;letter-spacing:3px;font-size:0.75rem;color:var(--red);margin-bottom:0.5rem;">Frontline Service</div>
 <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:0.6rem;">Over Two Decades Defending Children and Families</h3>
 <p style="font-size:0.9rem;line-height:1.7;color:#555;font-weight:300;">A career devoted to protecting the vulnerable and strengthening the Texas family through TBRI research, training, and frontline intervention work.</p>
 </div>
-<div class="info-card reveal" style="background:white;padding:2rem;border-radius:2px;border-left:4px solid var(--navy);box-shadow:0 2px 12px rgba(0,0,0,0.07);">
+<div class="info-card" style="background:white;padding:2rem;border-radius:2px;border-left:4px solid var(--navy);box-shadow:0 2px 12px rgba(0,0,0,0.07);">
 <div style="font-family:'Bebas Neue',sans-serif;letter-spacing:3px;font-size:0.75rem;color:var(--navy);margin-bottom:0.5rem;">Leadership in Practice</div>
 <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:0.6rem;">Training Organizations for Effective Leadership</h3>
 <p style="font-size:0.9rem;line-height:1.7;color:#555;font-weight:300;">Guiding policy and operations with a hard focus on accountability and ethical outcomes in state and nonprofit agencies across Texas.</p>
 </div>
-<div class="info-card reveal" style="background:white;padding:2rem;border-radius:2px;border-left:4px solid var(--gold);box-shadow:0 2px 12px rgba(0,0,0,0.07);">
+<div class="info-card" style="background:white;padding:2rem;border-radius:2px;border-left:4px solid var(--gold);box-shadow:0 2px 12px rgba(0,0,0,0.07);">
 <div style="font-family:'Bebas Neue',sans-serif;letter-spacing:3px;font-size:0.75rem;color:var(--gold);margin-bottom:0.5rem;">Scholarship</div>
 <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:0.6rem;">Peer-Reviewed Publications</h3>
 <p style="font-size:0.9rem;line-height:1.7;color:#555;font-weight:300;">Research grounded in evidence, integrity, and real-world impact — documenting the harm caused when courts and agencies violate parental rights.</p>
 </div>
-<div class="info-card reveal" style="background:white;padding:2rem;border-radius:2px;border-left:4px solid var(--red);box-shadow:0 2px 12px rgba(0,0,0,0.07);">
+<div class="info-card" style="background:white;padding:2rem;border-radius:2px;border-left:4px solid var(--red);box-shadow:0 2px 12px rgba(0,0,0,0.07);">
 <div style="font-family:'Bebas Neue',sans-serif;letter-spacing:3px;font-size:0.75rem;color:var(--red);margin-bottom:0.5rem;">Statewide Training</div>
 <h3 style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:0.6rem;">Trained Thousands of DFPS/CPS Caseworkers, Attorneys, and Judges</h3>
 <p style="font-size:0.9rem;line-height:1.7;color:#555;font-weight:300;">Equipping frontline teams with evidence-based tools to protect Texas children and enforce accountability throughout the state system.</p>
@@ -2722,12 +2574,12 @@
 <p class="section-intro" style="color:var(--mid);font-size:1rem;line-height:1.7;max-width:640px;font-weight:300;margin-top:0.8rem;">Taking principled conservative leadership on the road. The Magic Bus has been campaigning since the 2022 Convention. Meet Dr. McKenzie, pray, organize, and go to war for God.</p>
 </div>
 <div class="reveal cards-grid cards-grid-2 tour-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem;">
-<div class="tour-card reveal" style="background:white;border-radius:2px;padding:2rem;border-left:4px solid var(--red);box-shadow:0 2px 12px rgba(0,0,0,0.07);">
+<div class="tour-card" style="background:white;border-radius:2px;padding:2rem;border-left:4px solid var(--red);box-shadow:0 2px 12px rgba(0,0,0,0.07);">
 <div style="font-family:'Bebas Neue',sans-serif;letter-spacing:3px;font-size:0.8rem;color:var(--red);margin-bottom:0.5rem;">Upcoming Stop</div>
 <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin-bottom:0.5rem;">Bay City, Matagorda County, TX</h3>
 <p style="font-size:0.9rem;color:var(--mid);font-weight:300;">Week of April 5, 2026 — Exact date/time TBD. This stop will focus on restoring trust, defending faith-driven leadership, and rebuilding a Republican Party of Texas that answers to its delegates.</p>
 </div>
-<div class="tour-card reveal" style="background:white;border-radius:2px;padding:2rem;border-left:4px solid var(--gold);box-shadow:0 2px 12px rgba(0,0,0,0.07);">
+<div class="tour-card" style="background:white;border-radius:2px;padding:2rem;border-left:4px solid var(--gold);box-shadow:0 2px 12px rgba(0,0,0,0.07);">
 <div style="font-family:'Bebas Neue',sans-serif;letter-spacing:3px;font-size:0.8rem;color:var(--gold);margin-bottom:0.5rem;">Next Stop</div>
 <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin-bottom:0.5rem;">Carthage, Panola County, TX</h3>
 <p style="font-size:0.9rem;color:var(--mid);font-weight:300;">Coming soon — details pending. Check back for updates or email the campaign to stay informed and ready to take action.</p>
@@ -2751,13 +2603,13 @@
 <p class="section-intro" style="color:var(--mid);font-size:1rem;line-height:1.7;max-width:640px;font-weight:300;margin-top:0.8rem;">James Younger, an innocent Texas boy, is being subjected to prohibited procedures in California — with damage growing more irreversible every day. Dr. McKenzie has introduced resolutions demanding the RPT act immediately.</p>
 </div>
 <div class="reveal cards-grid cards-grid-2 resolutions-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
-<div class="resolution-card reveal" style="background:var(--light-gray);border-radius:2px;padding:2rem;border-top:4px solid var(--red);">
+<div class="resolution-card" style="background:var(--light-gray);border-radius:2px;padding:2rem;border-top:4px solid var(--red);">
 <div style="font-family:'Bebas Neue',sans-serif;letter-spacing:3px;font-size:0.8rem;color:var(--red);margin-bottom:0.8rem;">Emergency Legislative Priority</div>
 <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:1rem;">Resolution to Save James Younger</h3>
 <p style="font-size:0.9rem;color:var(--mid);line-height:1.7;font-weight:300;margin-bottom:1rem;">This resolution calls on the Republican Party of Texas to make saving James Younger a top legislative priority — commanding Republican legislators to pass legislation in the 2027 session that declares exclusive Texas UCCJEA jurisdiction, empowers the AG to issue emergency relief, and imposes felony penalties on any person facilitating prohibited gender procedures on Texas children.</p>
 <p style="font-size:0.85rem;color:var(--red);font-weight:600;">Carries forward the 2024 RPT Platform classification of gender modification of minors as child abuse.</p>
 </div>
-<div class="resolution-card reveal" style="background:var(--light-gray);border-radius:2px;padding:2rem;border-top:4px solid var(--navy);">
+<div class="resolution-card" style="background:var(--light-gray);border-radius:2px;padding:2rem;border-top:4px solid var(--navy);">
 <div style="font-family:'Bebas Neue',sans-serif;letter-spacing:3px;font-size:0.8rem;color:var(--navy);margin-bottom:0.8rem;">Rule 44 Censure Resolution</div>
 <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:1rem;">SCOTX Censure Resolution</h3>
 <p style="font-size:0.9rem;color:var(--mid);line-height:1.7;font-weight:300;margin-bottom:1rem;">Formal censure of Texas Supreme Court Justices Jane Bland, Jimmy Blacklock, Jeffrey S. Boyd, Brett Busby, Rebeca Huddle, Debra Lehrmann, and Evan Young under Rule 44 — for three or more failures to protect James Younger that violated core RPT platform principles, enabling his relocation to California and continued exposure to procedures Texas law classifies as child abuse.</p>
@@ -2770,7 +2622,7 @@
 <section class="donate-section" id="donate">
 <h2 class="reveal">Stand With Dr. Brooks McKenzie</h2>
 <p class="reveal">We are preparing the official donation platform so supporters can invest in principled, grassroots conservative leadership. Contributions will fuel the Magic Bus Tour, equip grassroots training events, and drive a statewide message that ends corruption and strengthens the conservative foundation of the Republican Party of Texas. We run on prayer, grit, and faithful volunteers.</p>
-<a class="btn-white reveal" href="/cdn-cgi/l/email-protection#70191e161f30140212021f1f1b034404085e1f0217">Email the Campaign to Donate</a>
+<a class="btn-white reveal" href="mailto:info@drbrooks4tx.org">Email the Campaign to Donate</a>
 </section>
 <!-- CONTACT -->
 <section aria-label="Contact and get involved" class="section" id="contact" role="region">
@@ -2779,7 +2631,7 @@
 <h2 class="section-h2">Contact Dr. McKenzie</h2>
 </div>
 <div class="contact-grid">
-<form action="#" aria-label="Campaign contact form" class="contact-form reveal from-left" data-recipient="info@drbrooks4tx.org" id="contactForm" method="POST" novalidate="">
+<form action="#" aria-label="Campaign contact form" class="contact-form reveal" data-recipient="info@drbrooks4tx.org" id="contactForm" method="POST" novalidate="">
 <p class="form-hint fine-print" style="font-size:0.82rem;color:#7a5a45;margin-bottom:1rem;">This form opens an email draft to the campaign using your device's default email app.</p>
 <p class="form-required-note">Fields marked <span class="required-mark">*</span> are required.</p>
 <div class="form-row">
@@ -2826,7 +2678,7 @@
                 ✓ Your email app should open with this message ready to send.
             </div>
 </form>
-<div class="contact-info reveal from-right">
+<div class="contact-info reveal">
 <h3>Campaign Contacts</h3>
 <div class="contact-item">
 <div class="contact-item-icon">
@@ -2843,7 +2695,7 @@
 </div>
 <div class="contact-item-text">
 <strong>Campaign Email</strong>
-<a href="/cdn-cgi/l/email-protection#93fafdf5fcd3f7e1f1e1fcfcf8e0a7e7ebbdfce1f4"><span class="__cf_email__" data-cfemail="6900070f06290d1b0b1b0606021a5d1d1147061b0e">[email&#160;protected]</span></a>
+<a href="mailto:info@drbrooks4tx.org">info@drbrooks4tx.org</a>
 </div>
 </div>
 <div class="contact-item">
@@ -2913,9 +2765,8 @@
 <span>© 2026 Dr. Brooks McKenzie for Chair of the Republican Party of Texas. All Rights Reserved.</span>
 <span>*Not affiliated with Robert McKenzie, candidate for Texas House District 137.</span>
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
     document.addEventListener('DOMContentLoaded', function () {
-
     /* ─── Mobile menu ─────────────────────────────────────────── */
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -2932,6 +2783,7 @@
     hamburger.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); hamburger.click(); }
     });
+    // Fix 5: Close mobile menu with Escape key, return focus to hamburger
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
             mobileMenu.classList.remove('open');
@@ -2939,6 +2791,8 @@
             hamburger.setAttribute('aria-label', 'Open menu');
             document.body.classList.remove('menu-open');
             hamburger.focus();
+            hamburger.setAttribute('aria-label', 'Open menu');
+            document.body.classList.remove('menu-open');
         }
     });
     document.querySelectorAll('.mm-link').forEach(link => {
@@ -2949,6 +2803,7 @@
             document.body.classList.remove('menu-open');
         });
     });
+
     document.addEventListener('click', (e) => {
         if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target) && mobileMenu.classList.contains('open')) {
             mobileMenu.classList.remove('open');
@@ -2958,7 +2813,6 @@
         }
     });
 
-    /* ─── FAQ accordion ───────────────────────────────────────── */
     document.querySelectorAll('.faq-item').forEach(item => {
         item.addEventListener('toggle', () => {
             if (item.open) {
@@ -2969,32 +2823,8 @@
         });
     });
 
-    /* ─── ENHANCEMENT 1: Scroll progress ribbon + active nav ──── */
-    const navLinks = document.querySelectorAll('.nav-links a:not(.nav-donate)');
 
-    const updateProgress = () => {
-        const scrollable = document.body.scrollHeight - window.innerHeight;
-        const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
-        document.documentElement.style.setProperty('--progress-pct', pct.toFixed(2) + '%');
-    };
-    window.addEventListener('scroll', updateProgress, { passive: true });
-    updateProgress();
-
-    // Active section tracking via IntersectionObserver
-    const sectionTargets = document.querySelectorAll('section[id], div[id].about-strip');
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navLinks.forEach(a => a.classList.remove('nav-active'));
-                const href = '#' + entry.target.id;
-                const activeLink = document.querySelector(`.nav-links a[href="${href}"]`);
-                if (activeLink) activeLink.classList.add('nav-active');
-            }
-        });
-    }, { threshold: 0.25, rootMargin: '-70px 0px -30% 0px' });
-    sectionTargets.forEach(s => sectionObserver.observe(s));
-
-    /* ─── ENHANCEMENT 2: Scroll reveal (directional) ─────────── */
+    /* ─── Scroll reveal ───────────────────────────────────────── */
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -3002,89 +2832,10 @@
                 revealObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.08 });
+    }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    /* ─── ENHANCEMENT 3: YouTube facade lazy-load ────────────── */
-    document.querySelectorAll('.yt-facade').forEach(facade => {
-        const activateFacade = () => {
-            const id = facade.dataset.videoid;
-            if (!id) return;
-            const iframe = document.createElement('iframe');
-            iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
-            iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
-            iframe.allowFullscreen = true;
-            iframe.title = facade.querySelector('img') ? facade.querySelector('img').alt : 'Campaign video';
-            // Fade in
-            iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;opacity:0;transition:opacity 0.3s;';
-            facade.innerHTML = '';
-            facade.appendChild(iframe);
-            requestAnimationFrame(() => { iframe.style.opacity = '1'; });
-        };
-        facade.addEventListener('click', activateFacade, { once: true });
-        facade.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateFacade(); }
-        });
-        // Make div keyboard-focusable if it has no button (fallback)
-        if (!facade.querySelector('button')) {
-            facade.setAttribute('tabindex', '0');
-            facade.setAttribute('role', 'button');
-        }
-    });
-
-    /* ─── ENHANCEMENT 4: Magnetic CTA buttons (desktop only) ─── */
-    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-        const magneticEls = document.querySelectorAll('.btn-primary, .btn-white, .nav-donate');
-        magneticEls.forEach(btn => {
-            let resetTimer;
-            btn.addEventListener('mousemove', (e) => {
-                clearTimeout(resetTimer);
-                const rect = btn.getBoundingClientRect();
-                const cx = rect.left + rect.width / 2;
-                const cy = rect.top + rect.height / 2;
-                const dx = (e.clientX - cx) * 0.3;
-                const dy = (e.clientY - cy) * 0.3;
-                btn.style.transform = `translate(${dx}px, ${dy}px)`;
-            });
-            btn.addEventListener('mouseleave', () => {
-                btn.style.transition = 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), background 0.25s, color 0.25s, border-color 0.25s, box-shadow 0.25s';
-                btn.style.transform = '';
-                resetTimer = setTimeout(() => { btn.style.transition = ''; }, 460);
-            });
-        });
-    }
-
-    /* ─── ENHANCEMENT 5: Animated stat counters ──────────────── */
-    function animateCounter(el, target, suffix, duration) {
-        // Special case: "1000s" — count to 1000 then append 's'
-        const start = performance.now();
-        const update = (now) => {
-            const elapsed = now - start;
-            const progress = Math.min(elapsed / duration, 1);
-            // Ease-out cubic
-            const eased = 1 - Math.pow(1 - progress, 3);
-            const current = Math.round(eased * target);
-            el.textContent = current + suffix;
-            if (progress < 1) requestAnimationFrame(update);
-        };
-        requestAnimationFrame(update);
-    }
-
-    const statObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            const el = entry.target;
-            const targetVal = parseInt(el.dataset.target, 10);
-            const suffix = el.dataset.suffix !== undefined ? el.dataset.suffix : '';
-            if (!isNaN(targetVal)) {
-                animateCounter(el, targetVal, suffix, 1500);
-            }
-            statObserver.unobserve(el);
-        });
-    }, { threshold: 0.6 });
-    document.querySelectorAll('.stat-num[data-target]').forEach(el => statObserver.observe(el));
-
-    /* ─── Infographic bar animations ─────────────────────────── */
+    /* ─── Infographic bar animations ──────────────────────────── */
     document.querySelectorAll('.bar-fill').forEach(bar => {
         new IntersectionObserver(([entry], obs) => {
             if (entry.isIntersecting) {
@@ -3157,12 +2908,15 @@
     if (platSection) {
         new IntersectionObserver(entries => {
             entries.forEach(e => {
-                if (e.isIntersecting) trackEvent('view', 'Section', 'Platform');
+                if (e.isIntersecting) {
+                    trackEvent('view', 'Section', 'Platform');
+                }
             });
         }, { threshold: 0.3 }).observe(platSection);
     }
 
     }); // end DOMContentLoaded
+
 </script>
 <!-- Fix 12: noscript notice for JS-disabled users -->
 <noscript>
@@ -3172,4 +2926,12 @@
 </noscript>
 <!--
   Fix 13: robots.txt — create this file at the root of your server:
-  ───────────────────────────
+  ──────────────────────────────────────────
+  User-agent: *
+  Allow: /
+  Disallow: /cdn-cgi/
+  Sitemap: https://drbrooks4tx.org/sitemap.xml
+  ──────────────────────────────────────────
+-->
+</body>
+</html>
