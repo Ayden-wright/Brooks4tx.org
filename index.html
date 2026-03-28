@@ -516,21 +516,22 @@
 
         .section-tag {
             font-family: 'Bebas Neue', sans-serif;
-            letter-spacing: 5px;
-            font-size: 1rem;
+            letter-spacing: 6px;
+            font-size: 1.2rem;
             color: var(--dark-red);
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 0.8rem;
+            gap: 14px;
+            margin-bottom: 1rem;
         }
 
         .section-tag::before {
             content: '';
             display: block;
-            width: 30px;
-            height: 2px;
+            width: 40px;
+            height: 3px;
             background: var(--red);
+            flex-shrink: 0;
         }
 
         .section-h2 {
@@ -1905,7 +1906,7 @@
             box-shadow: var(--shadow-card);
         }
 
-        .content-panel {
+        .content-panel:not(.scripture-panel) {
             background: rgba(255,255,255,0.82) !important;
             border: 1px solid var(--line-soft);
             padding: clamp(1.25rem, 2vw, 2rem) !important;
@@ -2136,10 +2137,11 @@
                 display: inline-block;
             }
             .section-tag {
-                letter-spacing: 3px;
+                font-size: 1rem;
+                letter-spacing: 4px;
             }
             .section-tag::before {
-                width: 24px;
+                width: 28px;
             }
             .btn-primary,
             .btn-secondary,
@@ -2687,7 +2689,7 @@
 <!-- CAMPAIGN MESSAGE -->
 <section aria-label="Campaign message" class="section" id="campaign-message" role="region" style="background:linear-gradient(180deg,var(--cream) 0%,#fff7f0 100%);padding-block:clamp(5rem,10vw,8rem);border-top:4px solid #ff5a1f;">
 <div class="section-header reveal" style="max-width:900px;">
-<div class="section-tag" style="font-size:1.1rem;letter-spacing:5px;">Campaign Message</div>
+<div class="section-tag">Campaign Message</div>
 <h2 class="section-h2" style="font-size:clamp(2.6rem,5.5vw,4.2rem);line-height:1.08;font-weight:900;margin-top:0.5rem;">Restore Judicial Accountability.<br/>Defend the Nuclear Family.</h2>
 </div>
 <div class="reveal two-col-layout campaign-layout" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
@@ -2696,15 +2698,15 @@
 <p style="font-size:1.2rem;line-height:1.85;color:var(--mid-strong);font-weight:400;margin-bottom:1.75rem;">He calls delegates to protect children, defend parental rights, and preserve the nuclear family as Texas's cornerstone — focusing upon integrity and accountability in every reform.</p>
 <p style="font-size:1.2rem;line-height:1.85;color:var(--mid-strong);font-weight:400;">Restoring God's design ends the chaos of gender-mutilation, abortion accommodation, school abuse, and the multitude of state-sponsored child abuses. He will confront corruption, honor the Constitution, and serve God alone.</p>
 </div>
-<div class="content-panel scripture-panel reveal from-right" style="background:#241008;padding:2.5rem;border-radius:4px;border-left:5px solid #ff5a1f;">
-<div style="font-family:'Bebas Neue',sans-serif;letter-spacing:4px;font-size:1rem;color:#ffb347;margin-bottom:1.25rem;">Scripture for This Season</div>
-<p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;line-height:1.9;color:rgba(255,255,255,0.95);margin-bottom:1.25rem;">"I came to send fire on the earth, and how I wish it were already kindled! But I have a baptism to be baptized with, and how distressed I am till it is accomplished! Do you suppose that I came to give peace on earth? I tell you, not at all, but rather division."</p>
-<p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;line-height:1.9;color:rgba(255,255,255,0.95);margin-bottom:1.5rem;">"From now on five in one house will be divided: three against two, and two against three. Father will be divided against son and son against father, mother against daughter and daughter against mother, mother-in-law against her daughter-in-law and daughter-in-law against her mother-in-law."</p>
-<p style="font-family:'Bebas Neue',sans-serif;letter-spacing:3px;font-size:1rem;color:#ffb347;">Luke 12:49–53 (NKJV)</p>
+<div class="content-panel scripture-panel from-right" style="background:#fdf6ee;padding:2.5rem 2.75rem;border-radius:4px;border-left:5px solid #c94010;">
+<div style="font-family:'Bebas Neue',sans-serif;letter-spacing:4px;font-size:0.9rem;color:#c94010;margin-bottom:1.5rem;">Scripture for This Season</div>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-style:normal;font-weight:400;font-size:1.15rem;line-height:2;color:#2a1206;margin-bottom:1.25rem;">"I came to send fire on the earth, and how I wish it were already kindled! But I have a baptism to be baptized with, and how distressed I am till it is accomplished! Do you suppose that I came to give peace on earth? I tell you, not at all, but rather division."</p>
+<p style="font-family:'Source Serif 4',Georgia,serif;font-style:normal;font-weight:400;font-size:1.15rem;line-height:2;color:#2a1206;margin-bottom:1.75rem;">"From now on five in one house will be divided: three against two, and two against three. Father will be divided against son and son against father, mother against daughter and daughter against mother, mother-in-law against her daughter-in-law and daughter-in-law against her mother-in-law."</p>
+<p style="font-family:'Bebas Neue',sans-serif;letter-spacing:3px;font-size:0.9rem;color:#c94010;">Luke 12:49–53 (NKJV)</p>
 </div>
 </div>
 <div class="reveal mission-highlights" style="margin-top:3.5rem;padding-top:3.5rem;border-top:2px solid rgba(216,67,21,0.2);">
-<div class="section-tag" style="margin-bottom:2rem;font-size:1.1rem;letter-spacing:5px;">Mission Highlights</div>
+<div class="section-tag" style="margin-bottom:2rem;">Mission Highlights</div>
 <div class="feature-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;">
 <div class="bullet-card" style="display:flex;align-items:flex-start;gap:1.25rem;padding:1.5rem;background:white;border-radius:4px;box-shadow:0 2px 12px rgba(36,16,8,0.07);border-left:4px solid var(--red);">
 <div class="bullet-dot" style="width:10px;height:10px;background:var(--red);border-radius:50%;flex-shrink:0;margin-top:7px;"></div>
@@ -3137,27 +3139,7 @@
         }
     });
 
-    /* ─── ENHANCEMENT 4: Magnetic CTA buttons (desktop only) ─── */
-    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-        const magneticEls = document.querySelectorAll('.btn-primary, .btn-white, .nav-donate');
-        magneticEls.forEach(btn => {
-            let resetTimer;
-            btn.addEventListener('mousemove', (e) => {
-                clearTimeout(resetTimer);
-                const rect = btn.getBoundingClientRect();
-                const cx = rect.left + rect.width / 2;
-                const cy = rect.top + rect.height / 2;
-                const dx = (e.clientX - cx) * 0.3;
-                const dy = (e.clientY - cy) * 0.3;
-                btn.style.transform = `translate(${dx}px, ${dy}px)`;
-            });
-            btn.addEventListener('mouseleave', () => {
-                btn.style.transition = 'transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), background 0.25s, color 0.25s, border-color 0.25s, box-shadow 0.25s';
-                btn.style.transform = '';
-                resetTimer = setTimeout(() => { btn.style.transition = ''; }, 460);
-            });
-        });
-    }
+    /* ─── ENHANCEMENT 4: Magnetic CTA buttons — disabled ─── */
 
     /* ─── ENHANCEMENT 5: Animated stat counters ──────────────── */
     function animateCounter(el, target, suffix, duration) {
