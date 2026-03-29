@@ -3071,6 +3071,9 @@
     staggerGrids.forEach(({ sel, stagger }) => {
         const items = gsap.utils.toArray(sel);
         if (!items.length) return;
+
+        const parent = items[0].parentElement;
+
         gsap.fromTo(items,
             { y: 50, opacity: 0, visibility: 'hidden' },
             {
@@ -3078,9 +3081,15 @@
                 duration: 0.7, stagger: stagger,
                 ease: 'power3.out',
                 scrollTrigger: {
-                    trigger: items[0].parentElement,
+                    trigger: parent,
                     start: 'top 82%',
                     toggleActions: 'play none none none',
+                    onEnter: () => {
+                        // Unhide parent grid containers that also carry .reveal
+                        if (parent.classList.contains('reveal')) {
+                            gsap.set(parent, { opacity: 1, visibility: 'visible' });
+                        }
+                    }
                 }
             }
         );
