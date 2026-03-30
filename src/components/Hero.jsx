@@ -24,7 +24,7 @@ const Hero = () => {
         <div className="hero-photo-frame">
           <img
             alt="Dr. Brooks McKenzie — Republican Party of Texas Chair Candidate"
-            src="/images/brooks-headshot.jpg"
+            src="/images/brooks-headshot.webp"
             style={{
               width: '100%',
               aspectRatio: '4/3',
