@@ -25,6 +25,10 @@ const Hero = () => {
           <img
             alt="Dr. Brooks McKenzie — Republican Party of Texas Chair Candidate"
             src="/images/brooks-headshot.webp"
+            width="1620"
+            height="892"
+            fetchPriority="high"
+            decoding="async"
             style={{
               width: '100%',
               aspectRatio: '4/3',
