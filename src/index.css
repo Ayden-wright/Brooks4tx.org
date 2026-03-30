@@ -164,7 +164,7 @@
             min-height: auto;
             background: linear-gradient(145deg, #111111 0%, #29150d 40%, #7c2d12 100%);
             display: grid;
-            grid-template-columns: 1fr 1.3fr;
+            grid-template-columns: minmax(0, 1.15fr) minmax(420px, 0.85fr);
             align-items: center;
             column-gap: 3rem;
             padding: 100px max(3rem, 8%) 60px;
@@ -329,14 +329,24 @@
             position: relative;
             z-index: 2;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: center;
+        }
+
+        .hero-image-stack {
+            width: 100%;
+            max-width: 560px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.85rem;
         }
 
         .hero-photo-frame {
             position: relative;
             width: 100%;
-            max-width: 560px;
+            max-width: none;
+            aspect-ratio: 3 / 2;
         }
 
         .hero-photo-placeholder {
@@ -415,9 +425,11 @@
         }
 
         .hero-credentials {
-            position: absolute;
-            bottom: -0.65rem;
-            left: -0.65rem;
+            position: static;
+            bottom: auto;
+            left: auto;
+            transform: none;
+            margin-top: 0;
             background: #241008;
             padding: 0.9rem 1.4rem;
             border-radius: 4px;
@@ -450,7 +462,6 @@
             .hero-ctas { justify-content: center; }
             .hero-image-col { order: -1; margin-bottom: 2rem; }
             .hero-photo-frame { width: min(340px, 85vw); max-width: none; }
-            .hero-credentials { left: 50%; transform: translateX(-50%); white-space: nowrap; }
         }
 
         /* ── ABOUT STRIP ── */
@@ -1799,7 +1810,7 @@
         }
 
         .hero {
-            gap: clamp(2rem, 5vw, 5rem);
+            gap: clamp(1.5rem, 3vw, 3rem);
             padding-inline: clamp(1rem, 5vw, 6%);
             min-height: auto;
         }
@@ -2133,6 +2144,10 @@
                 padding-top: 92px;
                 padding-bottom: 56px;
             }
+            .hero-image-stack {
+                width: min(85vw, 360px);
+                margin-inline: auto;
+            }
             .hero-photo-frame {
                 width: min(85vw, 360px);
                 max-width: none;
@@ -2140,7 +2155,7 @@
             .hero-credentials {
                 position: static;
                 transform: none;
-                margin-top: 1rem;
+                margin-top: 0;
                 display: inline-block;
             }
             .section-tag {

@@ -21,24 +21,26 @@ const Hero = () => {
       </div>
 
       <div className="hero-image-col">
-        <div className="hero-photo-frame">
-          <img
-            alt="Dr. Brooks McKenzie — Republican Party of Texas Chair Candidate"
-            src="/images/brooks-headshot.webp"
-            width="1620"
-            height="892"
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-            style={{
-              width: '100%',
-              aspectRatio: '4/3',
-              objectFit: 'cover',
-              objectPosition: '50% 20%',
-              borderRadius: '6px',
-              display: 'block',
-            }}
-          />
+        <div className="hero-image-stack">
+          <div className="hero-photo-frame">
+            <img
+              alt="Dr. Brooks McKenzie — Republican Party of Texas Chair Candidate"
+              src="/images/brooks-headshot.webp"
+              width="1620"
+              height="892"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: '48% 16%',
+                borderRadius: '6px',
+                display: 'block',
+              }}
+            />
+          </div>
           <div className="hero-credentials">
             <p>PhD · TCU · Tarrant County</p>
             <p>Precinct 2468 Chair, Tarrant Co. GOP</p>
