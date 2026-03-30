@@ -27,6 +27,7 @@ const Hero = () => {
             src="/images/brooks-headshot.webp"
             width="1620"
             height="892"
+            loading="eager"
             fetchPriority="high"
             decoding="async"
             style={{
@@ -37,7 +38,6 @@ const Hero = () => {
               borderRadius: '6px',
               display: 'block',
             }}
-            loading="eager"
           />
           <div className="hero-credentials">
             <p>PhD · TCU · Tarrant County</p>
