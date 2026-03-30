@@ -161,7 +161,7 @@
 
         /* ── HERO ── */
         .hero {
-            min-height: 100vh;
+            min-height: auto;
             background: linear-gradient(145deg, #111111 0%, #29150d 40%, #7c2d12 100%);
             display: grid;
             grid-template-columns: 1fr 1.3fr;
@@ -329,14 +329,14 @@
             position: relative;
             z-index: 2;
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
         }
 
         .hero-photo-frame {
             position: relative;
             width: 100%;
-            max-width: 700px;
+            max-width: 560px;
         }
 
         .hero-photo-placeholder {
@@ -416,8 +416,8 @@
 
         .hero-credentials {
             position: absolute;
-            bottom: -1.5rem;
-            left: -1.5rem;
+            bottom: -0.65rem;
+            left: -0.65rem;
             background: #241008;
             padding: 0.9rem 1.4rem;
             border-radius: 4px;
@@ -1662,7 +1662,6 @@
         }
         .field-error.show { display: block; }
         /* Fix 7: assertive live region styling hook */
-        .field-error[aria-live="assertive"] { /* already styled above */ }
 
         /* ── UTILITY CLASSES (replacing inline styles) ── */
         .tag-gold { color: var(--gold-bright); }
@@ -1802,7 +1801,7 @@
         .hero {
             gap: clamp(2rem, 5vw, 5rem);
             padding-inline: clamp(1rem, 5vw, 6%);
-            min-height: min(100svh, 980px);
+            min-height: auto;
         }
 
         .hero-text,
