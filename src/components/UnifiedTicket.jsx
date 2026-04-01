@@ -55,9 +55,7 @@ const UnifiedTicket = () => {
           </div>
 
           <p>
-            Kaitlan Ross is an executive-level safety leader who has spent 15+ years protecting people in the most
-            dangerous environments in America. She now brings that same uncompromising commitment to the Republican
-            Party of Texas as Dr. Brooks McKenzie's running mate for Vice Chair.
+            Kaitlan Ross, with 15+ years of EHS leadership in high-hazard industries, built safety divisions for data center construction for 20% of Fortune 50 companies in Texas and managed oil &amp; gas plant expansions, pipelines, and emergency response. A former firefighter, EMT, and technical rescue specialist, she brings direct expertise on O&amp;G and data center oversight. She left her career to fight for justice after confirmed abuse of her daughter in Matagorda County family courts, exposing judicial corruption and advocating parental rights and family law reform. As a third-generation Texas rancher, she ran for Lampasas County JP to restore court integrity and defend families. Now Dr. Brooks McKenzie running mate for RPT Vice Chair, she will confront misconduct, protect the nuclear family, and help Turn back to God, Restore the Family, and Restore Texas.
           </p>
 
           <blockquote style={{
