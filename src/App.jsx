@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutStrip from './components/AboutStrip';
 import About from './components/About';
+import UnifiedTicket from './components/UnifiedTicket';
 import Platform from './components/Platform';
 import CaseForReform from './components/CaseForReform';
 import CampaignMessage from './components/CampaignMessage';
@@ -29,6 +30,7 @@ function App() {
         <Hero />
         <AboutStrip />
         <About />
+        <UnifiedTicket />
         <Platform />
         <CaseForReform />
         <CampaignMessage />
