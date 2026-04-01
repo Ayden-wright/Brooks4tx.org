@@ -47,7 +47,7 @@ const UnifiedTicket = () => {
 
           <div className="bio-credentials" style={{ marginBottom: '1.5rem' }}>
             <div className="cred-item"><strong>15+ years EHS leadership in high-hazard industries</strong></div>
-            <div className="cred-item"><strong>Built and led safety divisions for data center construction for Microsoft and Meta across TX, WA, WY, and VA</strong></div>
+            <div className="cred-item"><strong>Built and led safety divisions for data center construction for 20% of Fortune 50 companies across TX, WA, and VA</strong></div>
             <div className="cred-item"><strong>Senior safety roles in oil &amp; gas, pipeline, industrial construction, and emergency response</strong></div>
             <div className="cred-item"><strong>Designed full HSE programs and trained hundreds of employees and contractors</strong></div>
             <div className="cred-item"><strong>Certifications: OSHA 500/510, confined-space rescue, heavy equipment, H2S, fire safety, PEC/Safeland</strong></div>
