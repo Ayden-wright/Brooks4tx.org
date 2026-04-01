@@ -45,19 +45,20 @@ const UnifiedTicket = () => {
             Kaitlan Ross
           </h3>
 
-          <p>
-            Kaitlan Ross is a former Firefighter, EMT, and EHS professional with 15+ years of leadership in
-            high-hazard industries. A dedicated Texas mother and fierce advocate for parental rights, she joins
-            Dr. Brooks McKenzie to confront judicial misconduct, defend the nuclear family, and restore
-            accountability across Texas.
-          </p>
-
-          <div className="bio-credentials">
-            <div className="cred-item"><strong>Former Firefighter &amp; EMT</strong></div>
-            <div className="cred-item"><strong>EHS Professional — 15+ Years in High-Hazard Industries</strong></div>
-            <div className="cred-item"><strong>Texas Mother &amp; Parental Rights Advocate</strong></div>
-            <div className="cred-item"><strong>RPT Vice Chair Candidate</strong></div>
+          <div className="bio-credentials" style={{ marginBottom: '1.5rem' }}>
+            <div className="cred-item"><strong>15+ years EHS leadership in high-hazard industries</strong></div>
+            <div className="cred-item"><strong>Built and led safety divisions for data center construction for Microsoft and Meta across TX, WA, WY, and VA</strong></div>
+            <div className="cred-item"><strong>Senior safety roles in oil &amp; gas, pipeline, industrial construction, and emergency response</strong></div>
+            <div className="cred-item"><strong>Designed full HSE programs and trained hundreds of employees and contractors</strong></div>
+            <div className="cred-item"><strong>Certifications: OSHA 500/510, confined-space rescue, heavy equipment, H2S, fire safety, PEC/Safeland</strong></div>
+            <div className="cred-item"><strong>Former Firefighter, EMT, and technical rescue specialist</strong></div>
           </div>
+
+          <p>
+            Kaitlan Ross is an executive-level safety leader who has spent 15+ years protecting people in the most
+            dangerous environments in America. She now brings that same uncompromising commitment to the Republican
+            Party of Texas as Dr. Brooks McKenzie's running mate for Vice Chair.
+          </p>
 
           <blockquote style={{
             borderLeft: '4px solid var(--red)',
