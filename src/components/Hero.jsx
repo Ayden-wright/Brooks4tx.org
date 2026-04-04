@@ -31,6 +31,7 @@ const Hero = () => {
               loading="eager"
               fetchPriority="high"
               decoding="async"
+              sizes="(max-width: 768px) 100vw, 1620px"
               style={{
                 width: '100%',
                 height: '100%',
