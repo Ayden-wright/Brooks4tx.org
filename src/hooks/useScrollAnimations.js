@@ -4,44 +4,83 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const REVEAL_DURATION = 0.65;
+const REVEAL_START    = 'top 85%';
+const WILL_CHANGE     = 'transform, opacity';
+
+function clearWillChange(batch) {
+  gsap.set(batch, { clearProps: 'willChange' });
+}
+
 export default function useScrollAnimations() {
   useEffect(() => {
-    // ─── Scroll reveal animations ───
-    const reveals = document.querySelectorAll('.reveal');
-    reveals.forEach((el) => {
-      const fromLeft = el.classList.contains('from-left');
-      const fromRight = el.classList.contains('from-right');
-      const xOffset = fromLeft ? -40 : fromRight ? 40 : 0;
+    // ─── Scroll reveal animations (batched by direction) ───
+    // ScrollTrigger.batch() replaces per-element triggers (~40 instances → 3).
+    // .platform-card is excluded here — it has its own stagger block below.
+    // autoAlpha is used instead of opacity+visibility because autoAlpha keeps
+    // visibility:hidden while opacity is 0 (invisible to AT and renderer), then
+    // sets visibility:visible only when opacity > 0, preventing the mid-tween
+    // "pop" that a discrete visibility toggle causes.
 
-      gsap.fromTo(
-        el,
-        { opacity: 0, y: fromLeft || fromRight ? 0 : 30, x: xOffset, visibility: 'hidden' },
-        {
-          opacity: 1,
-          y: 0,
-          x: 0,
-          visibility: 'visible',
-          duration: 0.7,
-          ease: 'power2.out',
-          scrollTrigger: { trigger: el, start: 'top 85%', once: true },
-        }
-      );
+    ScrollTrigger.batch('.reveal:not(.from-left):not(.from-right):not(.platform-card)', {
+      onEnter: (batch) => {
+        gsap.set(batch, { willChange: WILL_CHANGE });
+        gsap.fromTo(batch,
+          { autoAlpha: 0, y: 30 },
+          {
+            autoAlpha: 1, y: 0,
+            duration: REVEAL_DURATION, ease: 'power2.out', stagger: 0.05,
+            onComplete() { clearWillChange(batch); },
+          }
+        );
+      },
+      start: REVEAL_START,
+      once: true,
+    });
+
+    ScrollTrigger.batch('.reveal.from-left:not(.platform-card)', {
+      onEnter: (batch) => {
+        gsap.set(batch, { willChange: WILL_CHANGE });
+        gsap.fromTo(batch,
+          { autoAlpha: 0, x: -40 },
+          {
+            autoAlpha: 1, x: 0,
+            duration: REVEAL_DURATION, ease: 'power2.out', stagger: 0.05,
+            onComplete() { clearWillChange(batch); },
+          }
+        );
+      },
+      start: REVEAL_START,
+      once: true,
+    });
+
+    ScrollTrigger.batch('.reveal.from-right:not(.platform-card)', {
+      onEnter: (batch) => {
+        gsap.set(batch, { willChange: WILL_CHANGE });
+        gsap.fromTo(batch,
+          { autoAlpha: 0, x: 40 },
+          {
+            autoAlpha: 1, x: 0,
+            duration: REVEAL_DURATION, ease: 'power2.out', stagger: 0.05,
+            onComplete() { clearWillChange(batch); },
+          }
+        );
+      },
+      start: REVEAL_START,
+      once: true,
     });
 
     // ─── Platform card stagger ───
     const platformCards = document.querySelectorAll('.platform-card.reveal');
     if (platformCards.length) {
-      gsap.fromTo(
-        platformCards,
-        { opacity: 0, y: 30, visibility: 'hidden' },
+      gsap.set(platformCards, { willChange: WILL_CHANGE });
+      gsap.fromTo(platformCards,
+        { autoAlpha: 0, y: 30 },
         {
-          opacity: 1,
-          y: 0,
-          visibility: 'visible',
-          duration: 0.5,
-          stagger: 0.12,
-          ease: 'power2.out',
-          scrollTrigger: { trigger: '.platform-grid', start: 'top 80%', once: true },
+          autoAlpha: 1, y: 0,
+          duration: 0.5, stagger: 0.12, ease: 'power2.out',
+          scrollTrigger: { trigger: '.platform-grid', start: 'top 82%', once: true },
+          onComplete() { clearWillChange(platformCards); },
         }
       );
     }
@@ -62,27 +101,22 @@ export default function useScrollAnimations() {
             val: targetVal,
             duration: 1.5,
             ease: 'power2.out',
-            onUpdate: () => {
-              el.textContent = Math.round(obj.val) + suffix;
-            },
+            onUpdate: () => { el.textContent = Math.round(obj.val) + suffix; },
           });
         },
       });
     });
 
     // ─── Infographic bar animations ───
-    // Use scaleX (GPU-composited transform) instead of width to avoid layout thrashing.
-    // Set the target width via inline style first so scaleX scales to the right size.
     document.querySelectorAll('.bar-fill').forEach((bar) => {
       bar.style.width = (bar.dataset.width || 0) + '%';
-      gsap.fromTo(
-        bar,
-        { scaleX: 0, transformOrigin: 'left center' },
+      gsap.fromTo(bar,
+        { scaleX: 0, transformOrigin: 'left center', willChange: 'transform' },
         {
           scaleX: 1,
-          duration: 1.0,
-          ease: 'power2.out',
+          duration: 1.0, ease: 'power2.out',
           scrollTrigger: { trigger: bar, start: 'top 88%', once: true },
+          onComplete() { gsap.set(bar, { clearProps: 'willChange' }); },
         }
       );
     });
