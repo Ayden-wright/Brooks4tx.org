@@ -71,12 +71,15 @@ export default function useScrollAnimations() {
     });
 
     // ─── Infographic bar animations ───
+    // Use scaleX (GPU-composited transform) instead of width to avoid layout thrashing.
+    // Set the target width via inline style first so scaleX scales to the right size.
     document.querySelectorAll('.bar-fill').forEach((bar) => {
+      bar.style.width = (bar.dataset.width || 0) + '%';
       gsap.fromTo(
         bar,
-        { width: '0%' },
+        { scaleX: 0, transformOrigin: 'left center' },
         {
-          width: bar.dataset.width + '%',
+          scaleX: 1,
           duration: 1.0,
           ease: 'power2.out',
           scrollTrigger: { trigger: bar, start: 'top 88%', once: true },

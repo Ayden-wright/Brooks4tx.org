@@ -1515,8 +1515,7 @@
             height: 100%;
             border-radius: 4px;
             background: var(--red);
-            width: 0;
-            transition: width 1.2s ease;
+            transform-origin: left center;
         }
 
         .bar-fill.navy { background: var(--navy); }
