@@ -3,7 +3,7 @@ import React from 'react';
 const stats = [
   { target: 20, suffix: '+', label: 'Years Defending Texas Children & Families' },
   { target: 1000, suffix: '+', label: 'DFPS/CPS Caseworkers & Judges Trained' },
-  { target: 254, suffix: '', label: 'Texas Counties Fighting With Me' },
+  { target: 254, suffix: '', label: 'Texas Counties Standing for Texas' },
 ];
 
 const AboutStrip = () => {

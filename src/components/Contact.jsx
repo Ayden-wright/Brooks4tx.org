@@ -110,7 +110,7 @@ const Contact = () => {
 
           <div className="form-group">
             <label htmlFor="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell us how you'd like to get involved..." aria-label="Your message" />
+            <textarea id="message" name="message" rows="5" placeholder="Tell the campaign how you'd like to get involved..." aria-label="Your message" />
           </div>
 
           {/* Honeypot */}
@@ -120,7 +120,7 @@ const Contact = () => {
           <input type="hidden" name="_subject" value="New Campaign Inquiry - DrBrooksMcKenzie.com" />
 
           <p className="form-hint fine-print" style={{ fontSize: '0.78rem', color: 'var(--text-muted-light)' }}>
-            By submitting this form you agree to our{' '}
+            By submitting this form you agree to the{' '}
             <a href="/privacy-policy.html" style={{ color: 'var(--red)', textDecoration: 'underline' }}>Privacy Policy</a>.
           </p>
 

@@ -14,7 +14,7 @@ const Hero = () => {
         </p>
         <div className="hero-ctas">
           <a className="btn-primary" href="#platform" style={{ borderRadius: '3px' }}>
-            My Platform
+            The Platform
           </a>
           <a className="btn-secondary" href="#about">Meet Dr. McKenzie</a>
         </div>
