@@ -10,8 +10,8 @@ const stops = [
   },
   {
     kicker: 'Next Stop',
-    kickerColor: 'var(--dark-red)',
-    borderColor: 'var(--gold)',
+    kickerColor: 'var(--red)',
+    borderColor: 'var(--red)',
     title: 'Carthage, Panola County, TX',
     desc: 'Coming soon — details pending. Check back for updates or email the campaign to stay informed and ready to take action.',
   },
@@ -36,7 +36,7 @@ const MagicBusTour = () => {
             className="tour-card reveal"
             style={{
               background: 'white',
-              borderRadius: '2px',
+              borderRadius: '0',
               padding: '2rem',
               borderLeft: `4px solid ${stop.borderColor}`,
               boxShadow: '0 2px 12px rgba(0,0,0,0.07)',

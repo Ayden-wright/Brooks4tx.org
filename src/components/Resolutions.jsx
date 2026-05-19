@@ -14,7 +14,7 @@ const Resolutions = () => {
       </div>
 
       <div className="reveal cards-grid cards-grid-2 resolutions-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-        <div className="resolution-card reveal" style={{ background: 'var(--light-gray)', borderRadius: '2px', padding: '2rem', borderTop: '4px solid var(--red)' }}>
+        <div className="resolution-card reveal" style={{ background: 'var(--light-gray)', borderRadius: '0', padding: '2rem', borderTop: '4px solid var(--red)' }}>
           <div style={{ fontFamily: "'Bebas Neue',sans-serif", letterSpacing: '3px', fontSize: '1rem', color: 'var(--red)', marginBottom: '0.8rem' }}>
             Emergency Legislative Priority
           </div>
@@ -34,8 +34,8 @@ const Resolutions = () => {
           </p>
         </div>
 
-        <div className="resolution-card reveal" style={{ background: 'var(--light-gray)', borderRadius: '2px', padding: '2rem', borderTop: '4px solid var(--navy)' }}>
-          <div style={{ fontFamily: "'Bebas Neue',sans-serif", letterSpacing: '3px', fontSize: '1rem', color: 'var(--navy)', marginBottom: '0.8rem' }}>
+        <div className="resolution-card reveal" style={{ background: 'var(--light-gray)', borderRadius: '0', padding: '2rem', borderTop: '4px solid var(--red)' }}>
+          <div style={{ fontFamily: "'Bebas Neue',sans-serif", letterSpacing: '3px', fontSize: '1rem', color: 'var(--red)', marginBottom: '0.8rem' }}>
             Rule 44 Censure Resolution
           </div>
           <h3 style={{ fontFamily: "'Playfair Display',serif", fontSize: '1.4rem', fontWeight: '700', marginBottom: '1rem' }}>
@@ -48,7 +48,7 @@ const Resolutions = () => {
             enabling his relocation to California and continued exposure to procedures Texas law
             classifies as child abuse.
           </p>
-          <p style={{ fontSize: '1rem', color: 'var(--navy)', fontWeight: '600' }}>
+          <p style={{ fontSize: '1rem', color: 'var(--red)', fontWeight: '600' }}>
             Seek adoption at your County or Senatorial District Convention with instructions to carry
             forward to State Convention.
           </p>

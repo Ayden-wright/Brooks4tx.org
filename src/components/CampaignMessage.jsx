@@ -55,27 +55,27 @@ const CampaignMessage = () => {
         <div
           className="content-panel scripture-panel from-right"
           style={{
-            background: '#fdf6ee',
+            background: '#1c1917',
             padding: '2.5rem 2.75rem',
-            borderRadius: '4px',
-            borderLeft: '5px solid #c94010',
+            borderRadius: '0',
+            borderLeft: '5px solid var(--red)',
           }}
         >
-          <div style={{ fontFamily: "'Bebas Neue',sans-serif", letterSpacing: '4px', fontSize: '0.9rem', color: '#c94010', marginBottom: '1.5rem' }}>
+          <div style={{ fontFamily: "'Bebas Neue',sans-serif", letterSpacing: '4px', fontSize: '0.9rem', color: 'var(--red)', marginBottom: '1.5rem' }}>
             Scripture for This Season
           </div>
-          <p style={{ fontFamily: "'Source Serif 4',Georgia,serif", fontWeight: '400', fontSize: '1.15rem', lineHeight: '2', color: '#2a1206', marginBottom: '1.25rem' }}>
+          <p style={{ fontFamily: "'Source Serif 4',Georgia,serif", fontWeight: '400', fontSize: '1.15rem', lineHeight: '2', color: 'rgba(255,255,255,0.9)', marginBottom: '1.25rem' }}>
             "I came to send fire on the earth, and how I wish it were already kindled! But I have a
             baptism to be baptized with, and how distressed I am till it is accomplished! Do you suppose
             that I came to give peace on earth? I tell you, not at all, but rather division."
           </p>
-          <p style={{ fontFamily: "'Source Serif 4',Georgia,serif", fontWeight: '400', fontSize: '1.15rem', lineHeight: '2', color: '#2a1206', marginBottom: '1.75rem' }}>
+          <p style={{ fontFamily: "'Source Serif 4',Georgia,serif", fontWeight: '400', fontSize: '1.15rem', lineHeight: '2', color: 'rgba(255,255,255,0.9)', marginBottom: '1.75rem' }}>
             "From now on five in one house will be divided: three against two, and two against three.
             Father will be divided against son and son against father, mother against daughter and
             daughter against mother, mother-in-law against her daughter-in-law and daughter-in-law
             against her mother-in-law."
           </p>
-          <p style={{ fontFamily: "'Bebas Neue',sans-serif", letterSpacing: '3px', fontSize: '0.9rem', color: '#c94010' }}>
+          <p style={{ fontFamily: "'Bebas Neue',sans-serif", letterSpacing: '3px', fontSize: '0.9rem', color: 'var(--red)' }}>
             Luke 12:49–53 (NKJV)
           </p>
         </div>
@@ -94,7 +94,7 @@ const CampaignMessage = () => {
                 gap: '1.25rem',
                 padding: '1.5rem',
                 background: 'white',
-                borderRadius: '4px',
+                borderRadius: '0',
                 boxShadow: '0 2px 12px rgba(36,16,8,0.07)',
                 borderLeft: '4px solid var(--red)',
               }}
